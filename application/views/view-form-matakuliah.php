@@ -25,6 +25,16 @@
 						<input type="text" name="kode" id="kode">
 					</td>
 				</tr>
+				<?php
+				if (form_error('kode')) : ?>
+					<tr>
+						<th>Input Error</th>
+						<th>:</th>
+						<td>
+							<?php echo form_error('kode'); ?>
+						</td>
+					</tr>
+				<?php endif; ?>
 				<tr>
 					<th>Nama MTK</th>
 					<td>:</td>
@@ -32,6 +42,16 @@
 						<input type="text" name="nama" id="nama">
 					</td>
 				</tr>
+				<?php
+				if (form_error('nama')) : ?>
+					<tr>
+						<th>Input Error</th>
+						<th>:</th>
+						<td>
+							<?php echo form_error('nama'); ?>
+						</td>
+					</tr>
+				<?php endif; ?>
 				<tr>
 					<th>SKS</th>
 					<td>:</td>
