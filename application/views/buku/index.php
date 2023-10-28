@@ -9,7 +9,7 @@
 				</div>
 			<?php } ?>
 			<?= $this->session->flashdata('pesan'); ?>
-			<button class="btn btn-primary mb-3" datatoggle="modal" data-target="#bukuBaruModal"><i class="fas fa-filealt"></i> Buku Baru</button>
+			<button class="btn btn-primary mb-3" data-toggle="modal" data-target="#bukuBaruModal"><i class="fas fa-filealt"></i> Buku Baru</button>
 			<table class="table table-hover">
 				<thead>
 					<tr>
@@ -57,7 +57,6 @@
 			</table>
 		</div>
 	</div>
-	123
 </div>
 <!-- /.container-fluid -->
 </div>
@@ -75,24 +74,21 @@
 			<form action="<?= base_url('buku'); ?>" method="post" enctype="multipart/form-data">
 				<div class="modal-body">
 					<div class="form-group">
-						<input type="text" class="form-control formcontrol-user" id="judul_buku" name="judul_buku" placeholder="Masukkan Judul Buku">
+						<input type="text" class="form-control form-control-user" id="judul_buku" name="judul_buku" placeholder="Masukkan Judul Buku">
 					</div>
 					<div class="form-group">
-						<select name="id_kategori" class="formcontrol form-control-user">
+						<select name="id_kategori" class="form-control form-control-user">
 							<option value="">Pilih Kategori</option>
-							<?php
-							foreach ($kategori as $k) { ?>
-								<option value="<?= $k['id']; ?>"><?=
-																	$k['kategori']; ?></option>
-							<?php } ?>
+							<?php foreach ($kategori as $k) : ?>
+								<option value="<?= $k['id_kategori']; ?>"><?= $k['kategori']; ?></option>
+							<?php endforeach; ?>
 						</select>
 					</div>
 					<div class="form-group">
-						124
-						<input type="text" class="form-control formcontrol-user" id="pengarang" name="pengarang" placeholder="Masukkan nama pengarang">
+						<input type="text" class="form-control form-control-user" id="pengarang" name="pengarang" placeholder="Masukkan nama pengarang">
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control formcontrol-user" id="penerbit" name="penerbit" placeholder="Masukkan nama penerbit">
+						<input type="text" class="form-control form-control-user" id="penerbit" name="penerbit" placeholder="Masukkan nama penerbit">
 					</div>
 					<div class="form-group">
 						<select name="tahun" class="form-control form-control-user">
@@ -104,13 +100,13 @@
 						</select>
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control formcontrol-user" id="isbn" name="isbn" placeholder="Masukkan ISBN">
+						<input type="text" class="form-control form-control-user" id="isbn" name="isbn" placeholder="Masukkan ISBN">
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control formcontrol-user" id="stok" name="stok" placeholder="Masukkan nominal stok">
+						<input type="text" class="form-control form-control-user" id="stok" name="stok" placeholder="Masukkan nominal stok">
 					</div>
 					<div class="form-group">
-						<input type="file" class="form-control formcontrol-user" id="image" name="image">
+						<input type="file" class="form-control form-control-user" id="image" name="image">
 					</div>
 				</div>
 				<div class="modal-footer">
