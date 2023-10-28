@@ -39,6 +39,13 @@
 				</td>
 			</tr>
 			<tr>
+				<td>SKS</td>
+				<td>:</td>
+				<td>
+					<?= $awa; ?>
+				</td>
+			</tr>
+			<tr>
 				<td colspan="3" align="center">
 					<a href="<?= base_url('MataKuliah');
 								?>">Kembali</a>

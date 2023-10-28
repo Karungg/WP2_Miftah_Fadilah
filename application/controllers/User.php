@@ -53,7 +53,7 @@ class User extends CI_Controller
 			//jika ada gambar yang akan diupload
 			$upload_image = $_FILES['image']['name'];
 			if ($upload_image) {
-				$config['upload_path'] = './assets/img/profile/';
+				$config['upload_path'] = base_url('assets/') . 'img/profile/';
 				$config['allowed_types'] = 'gif|jpg|png';
 				$config['max_size'] = '3000';
 				$config['max_width'] = '1024';
@@ -63,7 +63,7 @@ class User extends CI_Controller
 				if ($this->upload->do_upload('image')) {
 					$gambar_lama = $data['user']['image'];
 					if ($gambar_lama != 'default.jpg') {
-						unlink(FCPATH . 'assets/img/profile/' .
+						unlink(FCPATH . base_url('assets/') . 'img/profile/' .
 							$gambar_lama);
 					}
 					$gambar_baru = $this->upload->data('file_name');
@@ -74,9 +74,7 @@ class User extends CI_Controller
 			$this->db->set('nama', $nama);
 			$this->db->where('email', $email);
 			$this->db->update('user');
-			$this->session->set_flashdata('pesan', '<div
-class="alert alert-success alert-message" role="alert">Profil
-Berhasil diubah </div>');
+			$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Profil Berhasil diubah </div>');
 			redirect('user');
 		}
 	}

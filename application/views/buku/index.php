@@ -9,7 +9,7 @@
 				</div>
 			<?php } ?>
 			<?= $this->session->flashdata('pesan'); ?>
-			<a href="" class="btn btn-primary mb-3" datatoggle="modal" data-target="#bukuBaruModal"><i class="fas fa-filealt"></i> Buku Baru</a>
+			<button class="btn btn-primary mb-3" datatoggle="modal" data-target="#bukuBaruModal"><i class="fas fa-filealt"></i> Buku Baru</button>
 			<table class="table table-hover">
 				<thead>
 					<tr>
@@ -23,7 +23,6 @@
 						<th scope="col">DiPinjam</th>
 						<th scope="col">DiBooking</th>
 						<th scope="col">Gambar</th>
-						122
 						<th scope="col">Pilihan</th>
 					</tr>
 				</thead>
@@ -44,16 +43,12 @@
 							<td>
 								<picture>
 									<source srcset="" type="image/svg+xml">
-									<img src="<?=
-												base_url('assets/img/upload/') . $b['image']; ?>" class="img-fluid
-img-thumbnail" alt="...">
+									<img src="<?= base_url('assets/img/upload/') . $b['image']; ?>" class="img-fluid img-thumbnail" alt="...">
 								</picture>
 							</td>
 							<td>
-								<a href="<?=
-											base_url('buku/ubahBuku/') . $b['id']; ?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
-								<a href="<?=
-											base_url('buku/hapusbuku/') . $b['id']; ?>" onclick="return confirm('Kamu yakin akan menghapus <?= $judul . ' ' . $b['judul_buku']; ?> ?');" class="badge badge-danger">
+								<a href="<?= base_url('buku/ubahBuku/') . $b['id']; ?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
+								<a href="<?= base_url('buku/hapusbuku/') . $b['id']; ?>" onclick="return confirm('Kamu yakin akan menghapus <?= $judul . ' ' . $b['judul_buku']; ?> ?');" class="badge badge-danger">
 									<i class="fas fa-trash"></i> Hapus</a>
 							</td>
 						</tr>
@@ -94,16 +89,13 @@ img-thumbnail" alt="...">
 					</div>
 					<div class="form-group">
 						124
-						<input type="text" class="form-control formcontrol-user" id="pengarang" name="pengarang" placeholder="Masukkan
-nama pengarang">
+						<input type="text" class="form-control formcontrol-user" id="pengarang" name="pengarang" placeholder="Masukkan nama pengarang">
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control formcontrol-user" id="penerbit" name="penerbit" placeholder="Masukkan
-nama penerbit">
+						<input type="text" class="form-control formcontrol-user" id="penerbit" name="penerbit" placeholder="Masukkan nama penerbit">
 					</div>
 					<div class="form-group">
-						<select name="tahun" class="form-control
-form-control-user">
+						<select name="tahun" class="form-control form-control-user">
 							<option value="">Pilih Tahun</option>
 							<?php
 							for ($i = date('Y'); $i > 1000; $i--) { ?>
@@ -115,8 +107,7 @@ form-control-user">
 						<input type="text" class="form-control formcontrol-user" id="isbn" name="isbn" placeholder="Masukkan ISBN">
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control formcontrol-user" id="stok" name="stok" placeholder="Masukkan nominal
-stok">
+						<input type="text" class="form-control formcontrol-user" id="stok" name="stok" placeholder="Masukkan nominal stok">
 					</div>
 					<div class="form-group">
 						<input type="file" class="form-control formcontrol-user" id="image" name="image">

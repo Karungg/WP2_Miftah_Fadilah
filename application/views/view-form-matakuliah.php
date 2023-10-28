@@ -31,7 +31,7 @@
 						<th>Input Error</th>
 						<th>:</th>
 						<td>
-							<?php echo form_error('kode'); ?>
+							<?= form_error('kode'); ?>
 						</td>
 					</tr>
 				<?php endif; ?>
@@ -48,7 +48,7 @@
 						<th>Input Error</th>
 						<th>:</th>
 						<td>
-							<?php echo form_error('nama'); ?>
+							<?= form_error('nama'); ?>
 						</td>
 					</tr>
 				<?php endif; ?>
