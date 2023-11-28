@@ -67,13 +67,15 @@ class Buku extends CI_Controller
 			]
 		);
 		//konfigurasi sebelum gambar diupload
-		$config['upload_path'] = './assets/img/upload/';
+		$config['upload_path'] = FCPATH . '/assets/img/upload/';
 		$config['allowed_types'] = 'jpg|png|jpeg';
 		$config['max_size'] = '3000';
 		$config['max_width'] = '1024';
 		$config['max_height'] = '1000';
 		$config['file_name'] = 'img' . time();
-		$this->load->library('upload', $config);
+
+		$test = $this->load->library('upload', $config);
+
 		if ($this->form_validation->run() == false) {
 			$this->load->view('templates/header', $data);
 			$this->load->view('templates/sidebar', $data);

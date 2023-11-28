@@ -7,6 +7,7 @@ class User extends CI_Controller
 		parent::__construct();
 		cek_login();
 	}
+
 	public function index()
 	{
 		$data['judul'] = 'Profil Saya';
@@ -17,6 +18,7 @@ class User extends CI_Controller
 		$this->load->view('user/index', $data);
 		$this->load->view('templates/footer');
 	}
+
 	public function anggota()
 	{
 		$data['judul'] = 'Data Anggota';
@@ -29,6 +31,7 @@ class User extends CI_Controller
 		$this->load->view('user/anggota', $data);
 		$this->load->view('templates/footer');
 	}
+
 	public function ubahProfil()
 	{
 		$data['judul'] = 'Ubah Profil';
@@ -41,6 +44,7 @@ class User extends CI_Controller
 				'required' => 'Nama tidak Boleh Kosong'
 			]
 		);
+
 		if ($this->form_validation->run() == false) {
 			$this->load->view('templates/header', $data);
 			$this->load->view('templates/sidebar', $data);
@@ -53,18 +57,19 @@ class User extends CI_Controller
 			//jika ada gambar yang akan diupload
 			$upload_image = $_FILES['image']['name'];
 			if ($upload_image) {
-				$config['upload_path'] = base_url('assets/') . 'img/profile/';
-				$config['allowed_types'] = 'gif|jpg|png';
+				$config['upload_path'] = FCPATH . '/assets/img/profile/';
+				$config['allowed_types'] = 'gif|jpg|png|jpeg';
 				$config['max_size'] = '3000';
 				$config['max_width'] = '1024';
 				$config['max_height'] = '1000';
 				$config['file_name'] = 'pro' . time();
+
 				$this->load->library('upload', $config);
+
 				if ($this->upload->do_upload('image')) {
 					$gambar_lama = $data['user']['image'];
 					if ($gambar_lama != 'default.jpg') {
-						unlink(FCPATH . base_url('assets/') . 'img/profile/' .
-							$gambar_lama);
+						unlink(FCPATH . base_url('assets/') . 'img/profile/' . $gambar_lama);
 					}
 					$gambar_baru = $this->upload->data('file_name');
 					$this->db->set('image', $gambar_baru);
